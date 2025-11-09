@@ -5,7 +5,8 @@ REPO="wukongdaily/img-installer"
 TAG="2025-10-24"
 FILE_NAME="istoreos-24.10.4-2025102410-x86-64-squashfs-combined-efi.img.gz"
 OUTPUT_PATH="openwrt/istoreos.img.gz"
-DOWNLOAD_URL=$(curl -s https://api.github.com/repos/$REPO/releases/tags/$TAG | jq -r '.assets[] | select(.name == "'"$FILE_NAME"'") | .browser_download_url')
+#DOWNLOAD_URL=$(curl -s https://api.github.com/repos/$REPO/releases/tags/$TAG | jq -r '.assets[] | select(.name == "'"$FILE_NAME"'") | .browser_download_url')
+DOWNLOAD_URL="https://fw0.koolcenter.com/iStoreOS/x86_64_efi/${FILE_NAME}"
 
 if [[ -z "$DOWNLOAD_URL" ]]; then
   echo "错误：未找到文件 $FILE_NAME"
